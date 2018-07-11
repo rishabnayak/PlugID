@@ -1,0 +1,8 @@
+*.jpg
+*.mx
+*.wdx
+*.wlnet
+*.png
+Data/*
+Lectures/*
+*.pem

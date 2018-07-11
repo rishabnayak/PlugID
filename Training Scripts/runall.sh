@@ -1,0 +1,10 @@
+wolframscript -file inceptionnetv2.m;
+wolframscript -file imageidentifynetv2.m;
+wolframscript -file ademnetv2.m;
+wolframscript -file resnetv2.m;
+wolframscript -file vgg19netv2.m;
+wolframscript -file imageidentifynet.m;
+wolframscript -file ademnet.m;
+wolframscript -file resnet.m;
+wolframscript -file inceptionnet.m;
+wolframscript -file vgg19net.m;
