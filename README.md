@@ -34,9 +34,9 @@ Analysis
 
 Best Performer: Accuracy
 -------
-The Ademxapp v2 Net trained on a dataset containing a total of 24000 images of 32 Port and connector categories was 91% accurate at classifying input images. This network is a high performance model which aimed to find a proper depth for ResNets, improving on the feature search method, trying to classify images accurately without grid-searching the whole space. As a result, the original network had only 17 residual units, and outperformed various deeper architectures. 
+The Ademxapp v2 Net trained on a dataset containing a total of 24000 images of 32 Port and connector categories was 91% accurate at classifying input images. This network is a high performance model which aimed to find a proper depth for ResNets, improving on the feature search method, trying to classify images accurately without grid-searching the whole space. As a result, the original network had only 17 residual units, and outperformed various deeper architectures.
 
-Modifying the Network, I added an ImageAugmentation Layer to augment the dataset, producing reflected versions of the input images along both the x and y axes, with a probability of 0.5 for both. The residual units 6a and 7a were allowed to retrain, along with the Batch Normalization Layer bn7, and the penultimate Linear Layer, which was followed up with a Softmax Layer. The final NetChain was - 
+Modifying the Network, I added an ImageAugmentation Layer to augment the dataset, producing reflected versions of the input images along both the x and y axes, with a probability of 0.5 for both. The residual units 6a and 7a were allowed to retrain, along with the Batch Normalization Layer bn7, and the penultimate Linear Layer, which was followed up with a Softmax Layer. The final NetChain was -
 
 ![Ademxapp v2 NetChain][1]
 
@@ -46,9 +46,9 @@ The error rate fell quite fast during the first few training rounds, and then pl
 
 Best Performer: Evaluation Time
 -------
-The ImageIdentify v2 network, again was trained on the same dataset used to train the Ademxapp v2 network. This network is based off of Wolfram's Image Identify Network, and uses transfer learning to speed up the training process.  This network was the fastest in terms of runtime, but suffered in terms of accuracy. The network was right only 82% of the time, but evaluated in merely 0.062s. It also had a much smaller memory footprint, weighing in at 42MB. 
+The ImageIdentify v2 network, again was trained on the same dataset used to train the Ademxapp v2 network. This network is based off of Wolfram's Image Identify Network, and uses transfer learning to speed up the training process.  This network was the fastest in terms of runtime, but suffered in terms of accuracy. The network was right only 82% of the time, but evaluated in merely 0.062s. It also had a much smaller memory footprint, weighing in at 42MB.
 
-This network was modified similarly to the Ademxapp v2 network to augment images, and the NetGraph Layer 5b was allowed to retrain. The network architecture was - 
+This network was modified similarly to the Ademxapp v2 network to augment images, and the NetGraph Layer 5b was allowed to retrain. The network architecture was -
 
 ![ImageIdentify v2 NetChain][3]
 
@@ -65,15 +65,20 @@ Below, I present the results of the speed and accuracy comparison of multiple ne
 Conclusions
 =======
 
-On analyzing the data, it was found that the Ademxapp v2 network performed the best, with an accuracy of 91%, but also was one of the slowest networks, having an evaluation time of 1.10s. The fastest network was the ImageIdentify v2 network, with an evaluation time of 0.062s, however, it compromised on accuracy, dropping to 82%. 
+On analyzing the data, it was found that the Ademxapp v2 network performed the best, with an accuracy of 91%, but also was one of the slowest networks, having an evaluation time of 1.10s. The fastest network was the ImageIdentify v2 network, with an evaluation time of 0.062s, however, it compromised on accuracy, dropping to 82%.
 
-From the data collected, it appears that there exists a direct relationship between accuracy and speed for Neural Networks. As the depth of the network increases, the accuracy increases, corresponding to an increase in evaluation time. 
+From the data collected, it appears that there exists a direct relationship between accuracy and speed for Neural Networks. As the depth of the network increases, the accuracy increases, corresponding to an increase in evaluation time.
 
 Future Work
 =======
 
  - Use a more diverse dataset, recognize more categories of images.
  - Implement a faster version of the network/networks as an API for use as an app for mobile phones, part of a larger application that provides users with contextual awareness about their environment.
+
+CloudDeploy Website
+ =======
+
+<a href="https://wolfr.am/w14jKMnl">PlugID</a>
 
 Author Contact Information
 =======
