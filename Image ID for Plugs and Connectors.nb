@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[    110216,       2334]
-NotebookOptionsPosition[    106920,       2270]
-NotebookOutlinePosition[    107298,       2287]
-CellTagsIndexPosition[    107255,       2284]
+NotebookDataLength[    161827,       3652]
+NotebookOptionsPosition[    153104,       3492]
+NotebookOutlinePosition[    153482,       3509]
+CellTagsIndexPosition[    153439,       3506]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -99,7 +99,7 @@ Cell[BoxData[
    3.740169589058187*^9, 3.7401695941082983`*^9}, {3.7402791192944603`*^9, 
    3.740279123431879*^9}},ExpressionUUID->"d5eab1a4-d623-4bd0-9c8e-\
 c6a793dbc3b7"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -138,7 +138,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.739927310639626*^9, 3.7399273264034157`*^9}, {
   3.739927443992785*^9, 3.7399274546745977`*^9}},
  CellLabel->"In[9]:=",ExpressionUUID->"bcf58b18-f9c5-4d8e-8db3-768b69ce2628"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -387,7 +387,7 @@ Cell[BoxData[
    3.73997905096082*^9}, {3.7401740480378637`*^9, 
    3.74017404985863*^9}},ExpressionUUID->"8b31c262-2a40-41ca-b6d4-\
 70333dd2fe02"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -490,7 +490,7 @@ Cell[BoxData[
   3.740174055316234*^9, 
   3.740174056712377*^9}},ExpressionUUID->"97ead77c-a10c-4ac9-8903-\
 fc85ea6d6c42"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -610,7 +610,7 @@ Cell[BoxData[
   3.740174069207925*^9, 
   3.7401740699896793`*^9}},ExpressionUUID->"9388634c-56e1-4d12-97f3-\
 5bca1b499220"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -690,7 +690,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.73992639157664*^9, 3.739926396898999*^9}, 
    3.739933879237034*^9},
  CellLabel->"In[21]:=",ExpressionUUID->"e7bee22f-b0f1-41a2-b7c8-884d2de9a032"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -717,8 +717,8 @@ Cell[BoxData[{
    3.7399725458640757`*^9, 3.73997260535275*^9}, 3.74000801756219*^9, 
    3.74003197324846*^9, 3.740279284983266*^9},
  CellLabel->"In[11]:=",ExpressionUUID->"b23e226b-561c-47d4-802d-55ccb9b7ce96"]
-}, Open  ]]
-}, Open  ]],
+}, Closed]]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -2265,8 +2265,1230 @@ size"], "Accuracy",
    3.7398984401955757`*^9},
  CellLabel->"Out[28]=",ExpressionUUID->"f0cf3c92-0278-497e-9915-277b70d047c4"]
 }, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Attempt 2: Neural Networks v1", "Subchapter",
+ CellChangeTimes->{{3.740178961305736*^9, 3.740178971498219*^9}, {
+  3.7403429492564783`*^9, 
+  3.740342954460585*^9}},ExpressionUUID->"2b9e3e4f-7701-4e25-8d29-\
+1e1ffc12a387"],
+
+Cell["\<\
+These Neural Networks were trained using Transfer Learning, using the first \
+few layers of an original, trained network, leaving them unchanged and \
+frozen, adding an ImageAugmentation Layer at the beginning of the Network to \
+produce reflected versions of the input images along both the x and y axes, \
+with a probability of 0.5 for both. The networks were cut off before the \
+final Linear Layer, and a new Linear Layer was added to reflect the different \
+output dimensions, which was followed up with a Softmax Layer to create a \
+final one-hot vector for the output. The Output Decoder was setup to \
+recognize classes, the classes being the names of the recognizable entities. \
+The networks used to extracted the pretrained networks were:\
+\>", "Text",
+ CellChangeTimes->{{3.740279416556883*^9, 3.740279486242077*^9}, {
+   3.740279662343203*^9, 3.7402797413943367`*^9}, {3.740279771399432*^9, 
+   3.74027983009032*^9}, {3.740279962061343*^9, 3.740280016310515*^9}, 
+   3.7402845243946*^9, {3.740324825641747*^9, 3.740324854243425*^9}, {
+   3.740324887545331*^9, 3.7403248917684097`*^9}, 
+   3.74032529910262*^9},ExpressionUUID->"9ab3899d-4561-4812-a197-\
+9a356ebe1b7e"],
+
+Cell[CellGroupData[{
+
+Cell["Ademxapp Model A", "Item",
+ CellChangeTimes->{{3.740280026086722*^9, 
+  3.740280030254332*^9}},ExpressionUUID->"aed538ff-5c59-4575-bd60-\
+f95df2e955d8"],
+
+Cell["Inception V3", "Item",
+ CellChangeTimes->{{3.740280040512632*^9, 
+  3.740280044888242*^9}},ExpressionUUID->"3190ce32-9d9a-4da4-8950-\
+b73ff1a1bf74"],
+
+Cell["ResNet-152", "Item",
+ CellChangeTimes->{{3.740280049382709*^9, 
+  3.740280053501841*^9}},ExpressionUUID->"cde53640-104b-435d-af53-\
+8524cf70eec6"],
+
+Cell["VGG-19", "Item",
+ CellChangeTimes->{{3.7402800562205553`*^9, 
+  3.740280057351884*^9}},ExpressionUUID->"4c516943-c53a-49c8-b98f-\
+39965ac3a6ce"],
+
+Cell["ImageIdentify", "Item",
+ CellChangeTimes->{{3.740280066605445*^9, 
+  3.740280082250251*^9}},ExpressionUUID->"f6bd2db4-23ac-4742-bb70-\
+d4d4a4670d77"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Attempt 3: Neural Networks v2", "Subchapter",
+ CellChangeTimes->{{3.740178961305736*^9, 3.740178971498219*^9}, {
+  3.7403429492564783`*^9, 
+  3.740342979710848*^9}},ExpressionUUID->"5249ec5f-fb12-47d2-bf62-\
+199586884ef8"],
+
+Cell["\<\
+These Neural Networks were yet again trained using Transfer Learning, similar \
+to v1 Networks, adding an ImageAugmentation Layer at the beginning, and a \
+Linear Layer followed by a Softmax Layer at the end of the network. What was \
+different was that that the entire network wasn\[CloseCurlyQuote]t frozen, \
+the last few layers of each of these networks were retrained, which boosted \
+up the accuracy significantly.\
+\>", "Text",
+ CellChangeTimes->{{3.740280107825479*^9, 3.7402801894204187`*^9}, 
+   3.740325309182777*^9},ExpressionUUID->"4f89d593-b839-4d6c-b554-\
+9fb62b9171c9"],
+
+Cell["Neural Networks", "Subsubsubsection",
+ CellChangeTimes->{{3.7401786785467176`*^9, 3.740178690647406*^9}, {
+  3.740179038680088*^9, 3.740179043283021*^9}, {3.7401991282320232`*^9, 
+  3.740199136158225*^9}},ExpressionUUID->"49a80860-ae67-44ba-a8f8-\
+8d2d02e3759c"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Neural Networks", "Chapter",
+ CellChangeTimes->{{3.7401791211267357`*^9, 3.740179125039713*^9}, {
+  3.74034302338842*^9, 
+  3.740343028262537*^9}},ExpressionUUID->"499176b8-df08-4be8-a441-\
+352780fe4427"],
+
+Cell[CellGroupData[{
+
+Cell["ImageIdentify v1", "Subchapter",
+ CellChangeTimes->{{3.740280199504084*^9, 
+  3.740280206946961*^9}},ExpressionUUID->"ca5f14db-c599-44f7-94a1-\
+5fabd3d7933a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"imageidentifyNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", "\"\<Wolfram ImageIdentify Net for WL 11.1\>\"", "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myimageidentifynet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<auglayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "imageidentifyNet"}], ",", 
+       
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.48", ",", "0.46", ",", "0.4"}], "}"}]}]}], "}"}], 
+       "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedimageidentifyNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myimageidentifynet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<File\>\"", ",", "\"\<checkpointimageidentifynet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedimageidentifyNet.wlnet\>\"", ",", 
+    RowBox[{"trainedimageidentifyNet", "[", "\"\<TrainedNet\>\"", "]"}]}], 
+   "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\<trainedimageidentifyNet.mx\>\"", ",", "trainedimageidentifyNet"}], 
+   "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7402803384360113`*^9, 
+  3.740280346127516*^9}},ExpressionUUID->"3387bd3b-3d5a-4244-9ccc-\
+dd3cd8d68f51"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Ademxapp v1", "Subchapter",
+ CellChangeTimes->{{3.7402802153076973`*^9, 
+  3.740280220366062*^9}},ExpressionUUID->"a82b0837-e8d8-4398-ba35-\
+bc7968f92381"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ademNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", 
+      "\"\<Ademxapp Model A Trained on ImageNet Competition Data\>\"", "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myademnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"320", ",", "320"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "ademNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"320", ",", "320"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.485", ",", "0.456", ",", "0.406"}], "}"}]}], ",", 
+         RowBox[{"\"\<VarianceImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.0524", ",", "0.0502", ",", "0.0506"}], "}"}]}]}], "}"}],
+        "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedademNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myademnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointademnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedademNet.wlnet\>\"", ",", 
+    RowBox[{"trainedademNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedademNet.mx\>\"", ",", "trainedademNet"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7402803108300467`*^9, 
+  3.740280316623062*^9}},ExpressionUUID->"2c842184-924e-4773-9d8f-\
+227518e36cfb"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inception v1", "Subchapter",
+ CellChangeTimes->{{3.740280230291388*^9, 
+  3.740280233164446*^9}},ExpressionUUID->"4d341de5-743b-40f9-aa13-\
+eba76fcbd37c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inceptionNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", 
+      "\"\<Inception V3 Trained on ImageNet Competition Data\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myinceptionnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"299", ",", "299"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "inceptionNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"299", ",", "299"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.5", ",", "0.5", ",", "0.5"}], "}"}]}]}], "}"}], "]"}]}],
+      ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedinceptionNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myinceptionnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointinceptionnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedinceptionNet.wlnet\>\"", ",", 
+    RowBox[{"trainedinceptionNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedinceptionNet.mx\>\"", ",", "trainedinceptionNet"}], 
+   "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280364720373*^9, 
+  3.7402803696565113`*^9}},ExpressionUUID->"009d9970-450d-47ae-83b2-\
+c9d83f8716cb"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["VGG-19 v1", "Subchapter",
+ CellChangeTimes->{{3.74028023802417*^9, 
+  3.7402802405143967`*^9}},ExpressionUUID->"814db5c4-b53d-4847-975a-\
+43adc174e61c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vgg19Net", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", "\"\<VGG-19 Trained on ImageNet Competition Data\>\"", 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "9"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myvgg19net", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "vgg19Net"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "0.4850196078431373", ",", "0.457956862745098", ",", 
+            "0.4076039215686274"}], "}"}]}]}], "}"}], "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedvgg19Net", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myvgg19net", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointvgg19net.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedvgg19Net.wlnet\>\"", ",", 
+    RowBox[{"trainedvgg19Net", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedvgg19Net.mx\>\"", ",", "trainedvgg19Net"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280384907658*^9, 
+  3.7402803902431517`*^9}},ExpressionUUID->"51967706-3808-4d3a-996b-\
+9e40a2d4fd71"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ResNet-152 v1", "Subchapter",
+ CellChangeTimes->{{3.740280245707994*^9, 
+  3.740280249760149*^9}},ExpressionUUID->"5e08d517-0e29-43d2-bc0c-\
+96d2e6980fb1"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"resNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", 
+      "\"\<ResNet-152 Trained on ImageNet Competition Data\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myresnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "resNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}]}], "}"}], "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedresNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myresnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointresnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedresNet.wlnet\>\"", ",", 
+    RowBox[{"trainedresNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedresNet.mx\>\"", ",", "trainedresNet"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280425982099*^9, 
+  3.7402804301805973`*^9}},ExpressionUUID->"efc61548-b49e-435c-95f6-\
+200e30836682"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ImageIdentify v2", "Subchapter",
+ CellChangeTimes->{{3.740280251624992*^9, 
+  3.7402802563988523`*^9}},ExpressionUUID->"411f5566-3c3b-4131-bae4-\
+5ef38bd0e700"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"imageidentifyNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", "\"\<Wolfram ImageIdentify Net for WL 11.1\>\"", "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myimageidentifynet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<auglayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "imageidentifyNet"}], ",", 
+       
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.48", ",", "0.46", ",", "0.4"}], "}"}]}]}], "}"}], 
+       "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedimageidentifyNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myimageidentifynet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<5b\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<File\>\"", ",", "\"\<checkpointimageidentifynet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedimageidentifyNetv2.wlnet\>\"", ",", 
+    RowBox[{"trainedimageidentifyNet", "[", "\"\<TrainedNet\>\"", "]"}]}], 
+   "]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+   "\"\<trainedimageidentifyNetv2.mx\>\"", ",", "trainedimageidentifyNet"}], 
+   "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.74028044591033*^9, 
+  3.740280450214548*^9}},ExpressionUUID->"52cb88ea-e9f0-4437-b6bb-\
+d37dcf0c33df"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Ademxapp v2", "Subchapter",
+ CellChangeTimes->{{3.740280259116536*^9, 
+  3.740280261763816*^9}},ExpressionUUID->"7219e096-72f0-489a-a047-\
+ecb06e457c4d"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ademNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", 
+      "\"\<Ademxapp Model A Trained on ImageNet Competition Data\>\"", "]"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myademnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"320", ",", "320"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "ademNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"320", ",", "320"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.485", ",", "0.456", ",", "0.406"}], "}"}]}], ",", 
+         RowBox[{"\"\<VarianceImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.0524", ",", "0.0502", ",", "0.0506"}], "}"}]}]}], "}"}],
+        "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedademNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myademnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<6a\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<7a\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<bn7\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointademnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedademNetv2.wlnet\>\"", ",", 
+    RowBox[{"trainedademNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedademNetv2.mx\>\"", ",", "trainedademNet"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280468444831*^9, 
+  3.740280472149458*^9}},ExpressionUUID->"70be529a-be73-4606-acf6-\
+2da81fdd1bb8"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Inception v2", "Subchapter",
+ CellChangeTimes->{{3.7402802638285713`*^9, 
+  3.740280266109898*^9}},ExpressionUUID->"ee9c4559-71a5-400a-89be-\
+f36afd446f22"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"inceptionNet", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", 
+      "\"\<Inception V3 Trained on ImageNet Competition Data\>\"", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myinceptionnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"299", ",", "299"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "inceptionNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"299", ",", "299"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{"0.5", ",", "0.5", ",", "0.5"}], "}"}]}]}], "}"}], "]"}]}],
+      ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedinceptionNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myinceptionnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<Inception11\>\""}], 
+          "}"}], "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<Inception10\>\""}], 
+          "}"}], "\[Rule]", "1"}], ",", 
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointinceptionnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedinceptionNetv2.wlnet\>\"", ",", 
+    RowBox[{"trainedinceptionNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedinceptionNetv2.mx\>\"", ",", "trainedinceptionNet"}], 
+   "]"}], ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.74028048981509*^9, 
+  3.740280493418539*^9}},ExpressionUUID->"6e3223d6-934a-4ce0-8410-\
+6a74d4288bc5"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["VGG-19 v2", "Subchapter",
+ CellChangeTimes->{{3.7402802688394127`*^9, 
+  3.740280271589167*^9}},ExpressionUUID->"0120f5be-8346-49e7-8711-\
+aa09c723bd66"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"vgg19Net", "=", 
+   RowBox[{"Take", "[", 
+    RowBox[{
+     RowBox[{
+     "NetModel", "[", "\"\<VGG-19 Trained on ImageNet Competition Data\>\"", 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "9"}]}], "}"}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"myvgg19net", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "vgg19Net"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}], ",", 
+         RowBox[{"\"\<MeanImage\>\"", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+           "0.4850196078431373", ",", "0.457956862745098", ",", 
+            "0.4076039215686274"}], "}"}]}]}], "}"}], "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedvgg19Net", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myvgg19net", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<conv5_4\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<conv5_3\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointvgg19net.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedvgg19Netv2.wlnet\>\"", ",", 
+    RowBox[{"trainedvgg19Net", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedvgg19Netv2.mx\>\"", ",", "trainedvgg19Net"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280511521501*^9, 
+  3.7402805155959682`*^9}},ExpressionUUID->"86924e37-4cb1-4230-a3e3-\
+9dade7b42324"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ResNet-152 v2", "Subchapter",
+ CellChangeTimes->{{3.7402802734422903`*^9, 
+  3.740280278842197*^9}},ExpressionUUID->"1a5f0b7a-b429-4cdf-8e47-\
+c13c8b0c53d1"],
+
+Cell[BoxData[{
+ RowBox[{"resNet", "=", 
+  RowBox[{"Take", "[", 
+   RowBox[{
+    RowBox[{
+    "NetModel", "[", 
+     "\"\<ResNet-152 Trained on ImageNet Competition Data\>\"", "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"-", "4"}]}], "}"}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"myresnet", "=", 
+   RowBox[{"NetChain", "[", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<augLayer\>\"", "\[Rule]", 
+        RowBox[{"ImageAugmentationLayer", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"224", ",", "224"}], "}"}], ",", 
+          RowBox[{"\"\<ReflectionProbabilities\>\"", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", "0.5"}], "}"}]}]}], "]"}]}], ",", 
+       RowBox[{"\"\<pretrainednet\>\"", "\[Rule]", "resNet"}], ",", 
+       RowBox[{"\"\<linear\>\"", "\[Rule]", 
+        RowBox[{"LinearLayer", "[", "]"}]}], ",", 
+       RowBox[{"\"\<softmax\>\"", "\[Rule]", 
+        RowBox[{"SoftmaxLayer", "[", "]"}]}]}], "]"}], ",", 
+     RowBox[{"\"\<Input\>\"", "\[Rule]", 
+      RowBox[{"NetEncoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Image\>\"", ",", 
+         RowBox[{"{", 
+          RowBox[{"224", ",", "224"}], "}"}]}], "}"}], "]"}]}], ",", 
+     RowBox[{"\"\<Output\>\"", "\[Rule]", 
+      RowBox[{"NetDecoder", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Class\>\"", ",", "connList"}], "}"}], "]"}]}]}], "]"}]}],
+   ";"}], "\n", 
+ RowBox[{
+  RowBox[{"trainedresNet", "=", 
+   RowBox[{"NetTrain", "[", 
+    RowBox[{"myresnet", ",", "trainingset", ",", "All", ",", 
+     RowBox[{"BatchSize", "\[Rule]", "32"}], ",", 
+     RowBox[{"LearningRateMultipliers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<5c\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<5b\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<pretrainednet\>\"", ",", "\"\<5a\>\""}], "}"}], 
+         "\[Rule]", "1"}], ",", 
+        RowBox[{"\"\<linear\>\"", "\[Rule]", "1"}], ",", 
+        RowBox[{"_", "\[Rule]", "0"}]}], "}"}]}], ",", 
+     RowBox[{"ValidationSet", "\[Rule]", "validationset"}], ",", 
+     RowBox[{"TargetDevice", "\[Rule]", "\"\<GPU\>\""}], ",", 
+     RowBox[{"TrainingProgressCheckpointing", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<File\>\"", ",", "\"\<checkpointresnet.wlnet\>\""}], 
+       "}"}]}]}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedresNetv2.wlnet\>\"", ",", 
+    RowBox[{"trainedresNet", "[", "\"\<TrainedNet\>\"", "]"}]}], "]"}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<trainedresNetv2.mx\>\"", ",", "trainedresNet"}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740280529998076*^9, 
+  3.740280538787284*^9}},ExpressionUUID->"0c785e97-a51c-401d-8c76-\
+aef94395848d"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Cloud Deployment", "Chapter",
+ CellChangeTimes->{{3.7401791211267357`*^9, 3.740179125039713*^9}, {
+  3.74034302338842*^9, 3.740343028262537*^9}, {3.740343200168304*^9, 
+  3.740343205397049*^9}},ExpressionUUID->"0aedcc7b-3010-48d5-b6a5-\
+ba036274c49d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net3", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net3", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740223678298283*^9, 3.7402236985355864`*^9}, {
+   3.740223756263094*^9, 3.740223803404147*^9}, {3.740223834121068*^9, 
+   3.740223841936201*^9}, {3.7402242024520817`*^9, 3.7402242597635603`*^9}, {
+   3.7402575745236883`*^9, 3.7402576454269657`*^9}, {3.7402576780014067`*^9, 
+   3.7402576855249033`*^9}, 3.740258514996182*^9, 3.740258577262171*^9, {
+   3.7402661039223146`*^9, 3.740266110775091*^9}, 3.7402661411970863`*^9, 
+   3.7402661967764797`*^9, {3.740266716963025*^9, 3.740266720687436*^9}, {
+   3.740275308922756*^9, 3.740275311711896*^9}, 3.7402753463295593`*^9, {
+   3.7402816265349407`*^9, 
+   3.7402816319491987`*^9}},ExpressionUUID->"42f9e793-61ab-4456-befb-\
+7e7f7eb1ff21"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net2", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net2", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.7402661436935873`*^9, 3.740266143742185*^9}, {
+   3.740266199680189*^9, 3.740266202523675*^9}, 3.740266927946074*^9, {
+   3.740275319388377*^9, 3.74027534792115*^9}, {3.740281635278653*^9, 
+   3.7402816371610622`*^9}},ExpressionUUID->"73090a04-7c05-4b64-a1a9-\
+552ec05afb99"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net4", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net4", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.7402661723388357`*^9}, {
+   3.740266207664084*^9, 3.740266211165689*^9}, 3.740266929845916*^9, {
+   3.7402753208553963`*^9, 3.740275348567663*^9}, {3.740281639036865*^9, 
+   3.740281640365335*^9}},ExpressionUUID->"ea61cc3a-7571-4622-9016-\
+c6ac0db2680a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net1", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net1", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.740266179827911*^9}, {
+   3.74026622573908*^9, 3.740266228682001*^9}, 3.7402669315596333`*^9, {
+   3.740275323731249*^9, 3.740275349169834*^9}, {3.740281642383573*^9, 
+   3.740281643229992*^9}},ExpressionUUID->"94df0818-bd4b-4c88-9762-\
+28fd45feefab"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net8", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net8", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.740266182361278*^9}, {
+   3.74026623306855*^9, 3.7402662363166027`*^9}, 3.740266933256198*^9, {
+   3.7402753252952967`*^9, 3.740275349834948*^9}, {3.740281645251637*^9, 
+   3.740281646480165*^9}},ExpressionUUID->"ac7d9544-9c5b-49ff-8545-\
+dfabad761a03"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net6", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net6", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.740266183929793*^9}, {
+   3.740266239406802*^9, 3.740266242112571*^9}, 3.74026693433536*^9, {
+   3.740275326623012*^9, 3.7402753504635963`*^9}, {3.7402816483466988`*^9, 
+   3.740281649571857*^9}},ExpressionUUID->"1e4da944-7f62-429c-b775-\
+3bdbfb7921df"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net9", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net9", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.7402661851003103`*^9}, {
+   3.7402662450956497`*^9, 3.740266247385724*^9}, 3.740266936414299*^9, {
+   3.7402753280517063`*^9, 3.740275351025671*^9}, {3.740281651416514*^9, 
+   3.740281652677677*^9}},ExpressionUUID->"7b260021-c600-4abf-8151-\
+830b5a030909"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net7", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net7", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.740266186249033*^9}, {
+   3.74026625094049*^9, 3.740266253474502*^9}, 3.740266937705851*^9, {
+   3.740275329502849*^9, 3.740275351747705*^9}, {3.7402816543036013`*^9, 
+   3.7402816554845324`*^9}},ExpressionUUID->"392a2e00-95ac-473f-96ee-\
+b0be943406e4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net10", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", 
+     RowBox[{"net10", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.7402661874568977`*^9}, {
+   3.740266256232338*^9, 3.740266260032268*^9}, 3.740266939515624*^9, {
+   3.740275332139537*^9, 3.740275352427567*^9}, {3.740281657160309*^9, 
+   3.7402816590377274`*^9}},ExpressionUUID->"e23bcdb1-0445-4951-a4e6-\
+e2dabb0bac87"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"net5", " ", "=", " ", 
+   RowBox[{"URLShorten", "@", 
+    RowBox[{"CloudExport", "[", " ", 
+     RowBox[{"net5", ",", "\"\<WLNET\>\"", ",", 
+      RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740266132229801*^9, 3.7402661874568977`*^9}, {
+   3.740266262861566*^9, 3.74026626569906*^9}, 3.74026694097355*^9, {
+   3.74027533467768*^9, 3.7402753529348373`*^9}, {3.74028166110865*^9, 
+   3.740281663455449*^9}},ExpressionUUID->"6be550cd-9031-47ab-b878-\
+db991e5b50fc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"nets", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+    "net3", ",", "net2", ",", "net4", ",", "net1", ",", "net8", ",", "net6", 
+     ",", "net9", ",", "net7", ",", "net10", ",", "net5"}], "}"}]}], 
+  ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740267066759727*^9, 3.7402670739930143`*^9}, {
+  3.7402765688191023`*^9, 3.740276642512219*^9}, {3.740276738014296*^9, 
+  3.740276768993577*^9}, {3.740281668057191*^9, 
+  3.740281691673628*^9}},ExpressionUUID->"ef919f27-592e-42be-8551-\
+e4b262855a81"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"form", "=", 
+   RowBox[{"FormPage", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<Upload\>\"", "\[Rule]", "\"\<Image\>\""}], ",", 
+       RowBox[{"\"\<Network\>\"", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"\"\<Ademxapp v2\>\"", "\[Rule]", "1"}], ",", 
+          RowBox[{"\"\<Inception V3 v2\>\"", "\[Rule]", "2"}], ",", 
+          RowBox[{"\"\<ResNet-152 v2\>\"", "\[Rule]", "3"}], ",", 
+          RowBox[{"\"\<ImageIdentify v2\>\"", "\[Rule]", "4"}], ",", 
+          RowBox[{"\"\<ResNet-152 v1\>\"", "\[Rule]", "5"}], ",", 
+          RowBox[{"\"\<ImageIdentify v1\>\"", "\[Rule]", "6"}], ",", 
+          RowBox[{"\"\<Inception v1\>\"", "\[Rule]", "7"}], ",", 
+          RowBox[{"\"\<Ademxapp v1\>\"", "\[Rule]", "8"}], ",", 
+          RowBox[{"\"\<VGG-19 v1\>\"", "\[Rule]", "9"}], ",", 
+          RowBox[{"\"\<VGG-19 v2\>\"", "\[Rule]", "10"}]}], "}"}]}]}], "}"}], 
+     ",", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"result", " ", "=", " ", 
+         RowBox[{
+          RowBox[{"CloudImport", "[", 
+           RowBox[{"nets", "[", 
+            RowBox[{"[", "#Network", "]"}], "]"}], "]"}], "[", "#Upload", 
+          "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Style", "[", 
+         RowBox[{"result", ",", "\"\<Title\>\""}], "]"}]}], ")"}], "&"}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"AppearanceRules", "\[Rule]", 
+      RowBox[{"<|", 
+       RowBox[{
+        RowBox[{
+        "\"\<Title\>\"", "\[Rule]", "\"\<Identify Plugs and Connectors\>\""}],
+         ",", 
+        RowBox[{
+        "\"\<Description\>\"", "\[Rule]", 
+         "\"\<This is an implementation of various Neural Networks which can \
+identify Plugs and Connectors\>\""}]}], "|>"}]}]}], "]"}]}], 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"form", ",", "\"\<PlugID\>\"", ",", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.740223678298283*^9, 3.7402236985355864`*^9}, {
+   3.740223756263094*^9, 3.740223803404147*^9}, {3.740223834121068*^9, 
+   3.740223841936201*^9}, {3.7402242024520817`*^9, 3.7402242597635603`*^9}, {
+   3.740224434185877*^9, 3.7402245108591433`*^9}, {3.740224549233777*^9, 
+   3.740224563247081*^9}, {3.740257654207013*^9, 3.7402576667017*^9}, {
+   3.740257718527791*^9, 3.740257869342679*^9}, {3.740258014633423*^9, 
+   3.740258082670692*^9}, {3.7402582680028963`*^9, 3.740258310481625*^9}, {
+   3.740258399880741*^9, 3.7402584520695753`*^9}, {3.740258583935608*^9, 
+   3.740258601405361*^9}, 3.740259600205464*^9, 3.7402637226466923`*^9, {
+   3.7402637900503073`*^9, 3.740263792672194*^9}, {3.740266520030301*^9, 
+   3.7402665982327213`*^9}, {3.740266811119286*^9, 3.740266826629195*^9}, {
+   3.7402669967846746`*^9, 3.740267110050919*^9}, {3.740269063341955*^9, 
+   3.740269067475996*^9}, {3.740269169070991*^9, 3.740269184089774*^9}, {
+   3.7402692159012938`*^9, 3.7402692770235367`*^9}, {3.7402694182338*^9, 
+   3.740269419638599*^9}, {3.7402699797076187`*^9, 3.740269980793845*^9}, {
+   3.740276779901368*^9, 
+   3.740276800177194*^9}},ExpressionUUID->"eca79126-c518-4119-b1e0-\
+bf350696f6ed"]
+}, Closed]]
 },
 WindowSize->{958, 880},
 WindowMargins->{{-16, Automatic}, {Automatic, 0}},
@@ -2292,41 +3514,41 @@ Cell[920, 29, 212, 4, 58, "Chapter",ExpressionUUID->"fad912b0-52c4-4c17-b22c-060
 Cell[CellGroupData[{
 Cell[1157, 37, 230, 4, 65, "Subchapter",ExpressionUUID->"facd543d-888d-4209-acc1-5a7e90455f18"],
 Cell[1390, 43, 3874, 57, 136, "Input",ExpressionUUID->"d5eab1a4-d623-4bd0-9c8e-c6a793dbc3b7"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[5301, 105, 241, 4, 65, "Subchapter",ExpressionUUID->"a49cc72d-f47b-4b69-90e4-6a0af9556212"],
+Cell[5301, 105, 241, 4, 49, "Subchapter",ExpressionUUID->"a49cc72d-f47b-4b69-90e4-6a0af9556212"],
 Cell[5545, 111, 568, 14, 52, "Input",ExpressionUUID->"683d739c-1b39-49bb-8b37-515bbb9e6b7c"],
 Cell[6116, 127, 476, 12, 30, "Input",ExpressionUUID->"bcf58b18-f9c5-4d8e-8db3-768b69ce2628"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[6629, 144, 362, 7, 101, "Subchapter",ExpressionUUID->"e049cc36-88b7-4af4-8b79-1c9274197949"],
+Cell[6629, 144, 362, 7, 85, "Subchapter",ExpressionUUID->"e049cc36-88b7-4af4-8b79-1c9274197949"],
 Cell[6994, 153, 8855, 221, 703, "Input",ExpressionUUID->"5409cd1a-47e1-425a-add2-2a760e4d32ef"],
 Cell[15852, 376, 531, 12, 30, "Input",ExpressionUUID->"8b31c262-2a40-41ca-b6d4-70333dd2fe02"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[16420, 393, 226, 5, 65, "Subchapter",ExpressionUUID->"407b6877-42a4-45ef-8e98-e060eff7ad1b"],
+Cell[16420, 393, 226, 5, 49, "Subchapter",ExpressionUUID->"407b6877-42a4-45ef-8e98-e060eff7ad1b"],
 Cell[16649, 400, 3122, 79, 304, "Input",ExpressionUUID->"30ea9687-77a8-4ee8-ba83-73d1708932b9"],
 Cell[19774, 481, 359, 10, 30, "Input",ExpressionUUID->"97ead77c-a10c-4ac9-8903-fc85ea6d6c42"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[20170, 496, 276, 6, 65, "Subchapter",ExpressionUUID->"36e7d739-6729-48e9-a396-ab55d9d3d689"],
+Cell[20170, 496, 276, 6, 49, "Subchapter",ExpressionUUID->"36e7d739-6729-48e9-a396-ab55d9d3d689"],
 Cell[20449, 504, 2932, 52, 115, "Input",ExpressionUUID->"e2defc97-41f0-4143-b098-612767cb7353"],
 Cell[23384, 558, 450, 11, 30, "Input",ExpressionUUID->"b1ef61e0-e86e-4f70-9a98-f9e7991ab3f4"],
 Cell[23837, 571, 1224, 29, 136, "Input",ExpressionUUID->"32672345-7e19-4cc6-9723-2f83c39f0e2a"],
 Cell[25064, 602, 328, 9, 30, "Input",ExpressionUUID->"9388634c-56e1-4d12-97f3-5bca1b499220"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[25429, 616, 228, 5, 65, "Subchapter",ExpressionUUID->"441678a8-fb0a-4078-8255-32505d735fbc"],
+Cell[25429, 616, 228, 5, 49, "Subchapter",ExpressionUUID->"441678a8-fb0a-4078-8255-32505d735fbc"],
 Cell[25660, 623, 2501, 61, 241, "Input",ExpressionUUID->"9ecf43f5-bbd6-4f9c-9f32-f23da5d8167f"],
 Cell[28164, 686, 246, 5, 30, "Input",ExpressionUUID->"e7bee22f-b0f1-41a2-b7c8-884d2de9a032"]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[28447, 696, 241, 6, 101, "Subchapter",ExpressionUUID->"2e9559f7-bb9e-4214-9bb2-1adcb0cacd6a"],
+Cell[28447, 696, 241, 6, 85, "Subchapter",ExpressionUUID->"2e9559f7-bb9e-4214-9bb2-1adcb0cacd6a"],
 Cell[28691, 704, 715, 14, 52, "Input",ExpressionUUID->"b23e226b-561c-47d4-802d-55ccb9b7ce96"]
-}, Open  ]]
-}, Open  ]],
+}, Closed]]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[29455, 724, 167, 3, 69, "Chapter",ExpressionUUID->"55691f7d-eb19-4305-905e-e3ed05fd71e8"],
+Cell[29455, 724, 167, 3, 58, "Chapter",ExpressionUUID->"55691f7d-eb19-4305-905e-e3ed05fd71e8"],
 Cell[CellGroupData[{
 Cell[29647, 731, 169, 3, 65, "Subchapter",ExpressionUUID->"e4fc530b-54ee-4aa7-9dab-eeab85f6415c"],
 Cell[29819, 736, 537, 12, 30, "Input",ExpressionUUID->"a7781a83-0985-4b72-ab14-e2d64775b11a"],
@@ -2334,8 +3556,104 @@ Cell[CellGroupData[{
 Cell[30381, 752, 228, 3, 30, "Input",ExpressionUUID->"dfb117ad-2d7b-446a-a255-4a8edd55875e"],
 Cell[30612, 757, 76268, 1508, 562, "Output",ExpressionUUID->"f0cf3c92-0278-497e-9915-277b70d047c4"]
 }, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[106929, 2271, 228, 4, 49, "Subchapter",ExpressionUUID->"2b9e3e4f-7701-4e25-8d29-1e1ffc12a387"],
+Cell[107160, 2277, 1190, 18, 150, "Text",ExpressionUUID->"9ab3899d-4561-4812-a197-9a356ebe1b7e"],
+Cell[CellGroupData[{
+Cell[108375, 2299, 158, 3, 32, "Item",ExpressionUUID->"aed538ff-5c59-4575-bd60-f95df2e955d8"],
+Cell[108536, 2304, 154, 3, 32, "Item",ExpressionUUID->"3190ce32-9d9a-4da4-8950-b73ff1a1bf74"],
+Cell[108693, 2309, 152, 3, 32, "Item",ExpressionUUID->"cde53640-104b-435d-af53-8524cf70eec6"],
+Cell[108848, 2314, 150, 3, 32, "Item",ExpressionUUID->"4c516943-c53a-49c8-b98f-39965ac3a6ce"],
+Cell[109001, 2319, 155, 3, 32, "Item",ExpressionUUID->"f6bd2db4-23ac-4742-bb70-d4d4a4670d77"]
 }, Open  ]]
-}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[109205, 2328, 228, 4, 49, "Subchapter",ExpressionUUID->"5249ec5f-fb12-47d2-bf62-199586884ef8"],
+Cell[109436, 2334, 595, 10, 81, "Text",ExpressionUUID->"4f89d593-b839-4d6c-b554-9fb62b9171c9"],
+Cell[110034, 2346, 268, 4, 26, "Subsubsubsection",ExpressionUUID->"49a80860-ae67-44ba-a8f8-8d2d02e3759c"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[110351, 2356, 210, 4, 58, "Chapter",ExpressionUUID->"499176b8-df08-4be8-a441-352780fe4427"],
+Cell[CellGroupData[{
+Cell[110586, 2364, 164, 3, 65, "Subchapter",ExpressionUUID->"ca5f14db-c599-44f7-94a1-5fabd3d7933a"],
+Cell[110753, 2369, 2904, 76, 278, "Input",ExpressionUUID->"3387bd3b-3d5a-4244-9ccc-dd3cd8d68f51",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[113694, 2450, 161, 3, 49, "Subchapter",ExpressionUUID->"a82b0837-e8d8-4398-ba35-bc7968f92381"],
+Cell[113858, 2455, 2973, 77, 278, "Input",ExpressionUUID->"2c842184-924e-4773-9d8f-227518e36cfb",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[116868, 2537, 160, 3, 49, "Subchapter",ExpressionUUID->"4d341de5-743b-40f9-aa13-eba76fcbd37c"],
+Cell[117031, 2542, 2852, 73, 278, "Input",ExpressionUUID->"009d9970-450d-47ae-83b2-c9d83f8716cb",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[119920, 2620, 158, 3, 49, "Subchapter",ExpressionUUID->"814db5c4-b53d-4847-975a-43adc174e61c"],
+Cell[120081, 2625, 2868, 74, 320, "Input",ExpressionUUID->"51967706-3808-4d3a-996b-9e40a2d4fd71",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[122986, 2704, 161, 3, 49, "Subchapter",ExpressionUUID->"5e08d517-0e29-43d2-bc0c-96d2e6980fb1"],
+Cell[123150, 2709, 2642, 69, 257, "Input",ExpressionUUID->"efc61548-b49e-435c-95f6-200e30836682",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[125829, 2783, 166, 3, 49, "Subchapter",ExpressionUUID->"411f5566-3c3b-4131-bae4-5ef38bd0e700"],
+Cell[125998, 2788, 3050, 80, 299, "Input",ExpressionUUID->"52cb88ea-e9f0-4437-b6bb-d37dcf0c33df",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[129085, 2873, 159, 3, 49, "Subchapter",ExpressionUUID->"7219e096-72f0-489a-a047-ecb06e457c4d"],
+Cell[129247, 2878, 3411, 89, 299, "Input",ExpressionUUID->"70be529a-be73-4606-acf6-2da81fdd1bb8",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[132695, 2972, 162, 3, 49, "Subchapter",ExpressionUUID->"ee9c4559-71a5-400a-89be-f36afd446f22"],
+Cell[132860, 2977, 3163, 81, 299, "Input",ExpressionUUID->"6e3223d6-934a-4ce0-8410-6a74d4288bc5",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[136060, 3063, 159, 3, 49, "Subchapter",ExpressionUUID->"0120f5be-8346-49e7-8711-aa09c723bd66"],
+Cell[136222, 3068, 3172, 82, 341, "Input",ExpressionUUID->"86924e37-4cb1-4230-a3e3-9dade7b42324",
+ InitializationCell->True]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[139431, 3155, 163, 3, 49, "Subchapter",ExpressionUUID->"1a5f0b7a-b429-4cdf-8e47-c13c8b0c53d1"],
+Cell[139597, 3160, 3053, 80, 278, "Input",ExpressionUUID->"0c785e97-a51c-401d-8c76-aef94395848d",
+ InitializationCell->True]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[142699, 3246, 257, 4, 58, "Chapter",ExpressionUUID->"0aedcc7b-3010-48d5-b6a5-ba036274c49d"],
+Cell[142959, 3252, 999, 19, 46, "Input",ExpressionUUID->"42f9e793-61ab-4456-befb-7e7f7eb1ff21",
+ InitializationCell->True],
+Cell[143961, 3273, 588, 13, 46, "Input",ExpressionUUID->"73090a04-7c05-4b64-a1a9-552ec05afb99",
+ InitializationCell->True],
+Cell[144552, 3288, 589, 13, 46, "Input",ExpressionUUID->"ea61cc3a-7571-4622-9016-c6ac0db2680a",
+ InitializationCell->True],
+Cell[145144, 3303, 586, 13, 46, "Input",ExpressionUUID->"94df0818-bd4b-4c88-9762-28fd45feefab",
+ InitializationCell->True],
+Cell[145733, 3318, 588, 13, 46, "Input",ExpressionUUID->"ac7d9544-9c5b-49ff-8545-dfabad761a03",
+ InitializationCell->True],
+Cell[146324, 3333, 588, 13, 46, "Input",ExpressionUUID->"1e4da944-7f62-429c-b775-3bdbfb7921df",
+ InitializationCell->True],
+Cell[146915, 3348, 591, 13, 46, "Input",ExpressionUUID->"7b260021-c600-4abf-8151-830b5a030909",
+ InitializationCell->True],
+Cell[147509, 3363, 588, 13, 46, "Input",ExpressionUUID->"392a2e00-95ac-473f-96ee-b0be943406e4",
+ InitializationCell->True],
+Cell[148100, 3378, 591, 13, 46, "Input",ExpressionUUID->"e23bcdb1-0445-4951-a4e6-e2dabb0bac87",
+ InitializationCell->True],
+Cell[148694, 3393, 590, 13, 46, "Input",ExpressionUUID->"6be550cd-9031-47ab-b878-db991e5b50fc",
+ InitializationCell->True],
+Cell[149287, 3408, 555, 13, 46, "Input",ExpressionUUID->"ef919f27-592e-42be-8551-e4b262855a81",
+ InitializationCell->True],
+Cell[149845, 3423, 3243, 66, 278, "Input",ExpressionUUID->"eca79126-c518-4119-b1e0-bf350696f6ed",
+ InitializationCell->True]
+}, Closed]]
 }
 ]
 *)
